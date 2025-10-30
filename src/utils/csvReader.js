@@ -1,10 +1,25 @@
+import { generateDefaultPerformanceData } from '../data/researchData';
+
 // CSV Reader for processing original research data files - FIXED VERSION
+
+const getAssetBasePath = () => {
+  if (typeof window !== 'undefined' && window.__NEXT_DATA__?.assetPrefix) {
+    return window.__NEXT_DATA__.assetPrefix;
+  }
+  return process.env.NEXT_PUBLIC_BASE_PATH || '';
+};
+
+const buildAssetUrl = (filename) => {
+  const basePath = getAssetBasePath().replace(/\/$/, '');
+  const cleaned = filename.startsWith('/') ? filename.slice(1) : filename;
+  return basePath ? `${basePath}/${cleaned}` : `/${cleaned}`;
+};
 
 // Read CSV file from the public directory (Next.js static file serving)
 export const readCSVFile = async (filename) => {
   try {
     // In Next.js, static files are served from the public directory
-    const response = await fetch(`/${filename}`);
+    const response = await fetch(buildAssetUrl(filename));
     
     if (!response.ok) {
       throw new Error(`Failed to fetch ${filename}: ${response.status}`);

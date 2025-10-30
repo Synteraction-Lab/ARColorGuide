@@ -1,3 +1,6 @@
+const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/ARColorGuide' : '';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
@@ -5,13 +8,10 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  
+  assetPrefix: basePath ? `${basePath}/` : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath
+  }
 };
 
-const isProd = process.env.NODE_ENV === 'production';
-
-module.exports = {
-  assetPrefix: isProd ? '/ARColorGuide/' : '',
-  images: { unoptimized: true },
-  output: 'export',
-}; 
+module.exports = nextConfig;

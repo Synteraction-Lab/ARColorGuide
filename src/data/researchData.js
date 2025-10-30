@@ -139,7 +139,7 @@ export const getPerformanceData = (hue, device, environment, background = 'contr
 };
 
 // Generate default performance data when specific data is not available
-const generateDefaultPerformanceData = (variationType) => {
+export const generateDefaultPerformanceData = (variationType) => {
   const data = [];
   const range = variationType === 'brightness' ? [20, 30, 40, 50, 60, 70, 80, 90, 100] : [20, 30, 40, 50, 60, 70, 80, 90, 100];
   

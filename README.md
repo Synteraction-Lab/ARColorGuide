@@ -2,6 +2,12 @@
 
 An interactive web application demonstrating research results on AR color selection guidelines for smart glasses. This project provides comprehensive color performance analysis and selection recommendations for different AR devices and environmental conditions.
 
+**This project is based on the following research paper:**
+
+```
+Gu, Yue, Runze Cai, Ashwin Ram, Yuxuan Li, Haimo Zhang, and Shengdong Zhao. "From Simple to Polychromatic: An Empirical Study on Optimal Color Schemes for Optical See-through Head-Mounted Displays." IEEE Transactions on Visualization and Computer Graphics (2025).
+```
+
 ## Features
 
 ### 🎨 Color Performance Analysis
