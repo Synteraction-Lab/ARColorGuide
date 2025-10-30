@@ -1,0 +1,26 @@
+{
+  "name": "ar-color-guide",
+  "version": "1.0.0",
+  "description": "AR Color Selection Guidelines - Interactive Research Demo",
+  "homepage": "https://Synteraction-Lab.github.io/ARColorGuide",
+  "private": true,
+  "dependencies": {
+    "next": "^15.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^2.7.2"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
+  },
+
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
+ 

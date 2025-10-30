@@ -1,0 +1,278 @@
+.color-selection-guide {
+  max-width: 100%;
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.control-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Legend Styles */
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legend-color {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 2px solid #ddd;
+}
+
+.legend-color.comfort {
+  background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.legend-color.clear {
+  background: linear-gradient(90deg, #ffc107, #fd7e14);
+}
+
+.legend-color.avoid {
+  background: linear-gradient(90deg, #dc3545, #e83e8c);
+}
+
+/* Guidelines Chart */
+.guidelines-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.hue-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.hue-row:hover {
+  background: #e9ecef;
+}
+
+.hue-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.hue-number {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.hue-name {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.color-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.color-bar {
+  display: flex;
+  height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.segment {
+  flex: 1;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.segment:hover {
+  transform: scaleY(1.1);
+  z-index: 1;
+}
+
+.segment.comfort {
+  border-right: 2px solid #28a745;
+  border-left: 2px solid #28a745;
+}
+
+.segment.clear {
+  border-right: 2px solid #ffc107;
+  border-left: 2px solid #ffc107;
+}
+
+.segment.avoid {
+  border-right: 2px solid #dc3545;
+  border-left: 2px solid #dc3545;
+}
+
+.color-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  padding: 0 4px;
+}
+
+/* Recommendations */
+.recommendations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.recommendation-item {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.recommendation-item h4 {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 16px;
+}
+
+.recommendation-item p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hue-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .hue-label {
+    flex-direction: row;
+    gap: 8px;
+    min-width: auto;
+  }
+  
+  .color-bar-container {
+    width: 100%;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group .btn {
+    width: 100%;
+  }
+  
+  .recommendations {
+    grid-template-columns: 1fr;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .color-bar {
+    height: 20px;
+  }
+  
+  .hue-number {
+    font-size: 14px;
+  }
+  
+  .hue-name {
+    font-size: 10px;
+  }
+} 
+
+.button-group .btn.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+.button-group .btn.btn-secondary {
+  background: #f8f9fa;
+  color: #333;
+  border-color: #ddd;
+} 

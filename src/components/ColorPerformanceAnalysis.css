@@ -1,0 +1,259 @@
+.color-performance-analysis {
+  max-width: 100%;
+}
+
+.description {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.control-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.hue-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 8px;
+  max-width: 600px;
+}
+
+.hue-btn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.hue-btn:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.hue-btn.active {
+  border-color: #007bff;
+  border-width: 3px;
+  transform: scale(1.1);
+}
+
+.chart-container {
+  margin: 20px 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.chart-description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.performance-insights {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.performance-insights h4 {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.performance-insights ul {
+  list-style: none;
+  padding: 0;
+}
+
+.performance-insights li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.performance-insights li:before {
+  content: "•";
+  color: #007bff;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.color-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.color-gradient {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.color-sample {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.color-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.color-info p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* Loading States */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #666;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Color Sample Bar */
+.color-sample-bar-aligned {
+  display: flex;
+  width: 100%;
+  margin-top: 0;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  border: none;
+  background: none;
+  position: relative;
+  min-height: 36px;
+}
+.color-sample-item-aligned {
+  height: 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  border: none;
+}
+
+.color-sample-item-aligned .sample-label {
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.color-sample-item-aligned:hover {
+  transform: scale(1.08);
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .controls-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .hue-selector {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .color-gradient {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .button-group .btn {
+    width: 100%;
+  }
+  
+  .color-sample-bar-aligned {
+    min-height: 24px;
+  }
+  .color-sample-item-aligned {
+    height: 24px;
+  }
+  .color-sample-item-aligned .sample-label {
+    font-size: 8px;
+  }
+} 
