@@ -5,10 +5,10 @@ const basePath = isProd ? '/ARColorGuide' : '';
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: basePath,
   images: {
     unoptimized: true
   },
-  assetPrefix: basePath ? `${basePath}/` : '',
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath
   }

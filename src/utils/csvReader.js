@@ -3,8 +3,15 @@ import { generateDefaultPerformanceData } from '../data/researchData';
 // CSV Reader for processing original research data files - FIXED VERSION
 
 const getAssetBasePath = () => {
-  if (typeof window !== 'undefined' && window.__NEXT_DATA__?.assetPrefix) {
-    return window.__NEXT_DATA__.assetPrefix;
+  if (typeof window !== 'undefined') {
+    // Try basePath first (for static export)
+    if (window.__NEXT_DATA__?.basePath) {
+      return window.__NEXT_DATA__.basePath;
+    }
+    // Fallback to assetPrefix (for older configs)
+    if (window.__NEXT_DATA__?.assetPrefix) {
+      return window.__NEXT_DATA__.assetPrefix;
+    }
   }
   return process.env.NEXT_PUBLIC_BASE_PATH || '';
 };
